@@ -4,10 +4,11 @@
 To develop a convolutional deep neural network (CNN) for image classification and to verify the response for new images.
 
 ##   PROBLEM STATEMENT AND DATASET
-Image classification is a fundamental task in computer vision where an input image is assigned to one of several predefined classes. The objective of this experiment is to build and train a Convolutional Neural Network (CNN) using a labeled image dataset and evaluate its performance using accuracy, confusion matrix, and classification report.
+The aim of this experiment is to develop a Convolutional Neural Network (CNN) model to classify images into different categories. The model takes image data as input, learns important features using convolutional layers, and predicts the correct class label. A dataset of labeled images (such as handwritten digits from 0 to 9) is used to train and test the model. Finally, the performance of the model is evaluated, and it is used to predict the class of new unseen images.
 
 ## Neural Network Model
-Include the neural network model diagram.
+<img width="835" height="427" alt="image" src="https://github.com/user-attachments/assets/eaed7ea2-019b-40a8-99b5-34f8b79b91a4" />
+
 
 ## DESIGN STEPS
 ### STEP 1: 
@@ -20,30 +21,20 @@ Preprocess the dataset.
 
 ### STEP 3: 
 Create and train your model.
-
-
 ### STEP 4: 
 Include the training loss, validation loss vs iteration plot.
-
-
-
 ### STEP 5: 
 Test the model for your handwritten scanned images.
-
-
-
 ### STEP 6: 
 Create and train your model.
 
-
-
 ## PROGRAM
 
-### Name: D Karthikeyan
+### Name: KARTHIKEYAN D
 
 ### Register Number: 212224230115
 
-```
+```python
 class CNNClassifier(nn.Module):
     def __init__(self):
         super(CNNClassifier, self).__init__()
@@ -68,7 +59,20 @@ class CNNClassifier(nn.Module):
 
         return x
 
+from torchsummary import summary
 
+# Initialize model
+model = CNNClassifier()
+
+# Move model to GPU if available
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+    model.to(device)
+
+# Print model summary
+print('Name: Vikaskumar M')
+print('Register Number: 212224220122')
+summary(model, input_size=(1, 28, 28))
 
 # Initialize the Model, Loss Function, and Optimizer
 model = CNNClassifier()
@@ -77,8 +81,8 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Train the Model
 def train_model(model, train_loader, num_epochs=3):
-  print('Name:  D KARTHIKEYAN')
-  print('Register Number:   212224230115')
+  print('Name: Vikaskumar M')
+  print('Register Number: 212224220122')
   for epoch in range(num_epochs):
       model.train()
       running_loss = 0.0
@@ -89,33 +93,29 @@ def train_model(model, train_loader, num_epochs=3):
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
-    # write your code here
 
-      print('Name:  D KARTHIKEYAN')
-      print('Register Number:   212224230115')
+      print('Name: Vikaskumar M')
+      print('Register Number: 212224220122')
       print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader):.4f}')
+
+
+# Train the model
+train_model(model, train_loader)
 ```
 
 ### OUTPUT
 
-<img width="665" height="420" alt="image" src="https://github.com/user-attachments/assets/490bffc0-9225-45f6-8eef-2d6576633044" />
-
-
-Include the Training Loss per epoch
+## Training Loss per Epoch
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/SXPKhWBW/D2.png" alt="D2" border="0"></a>
 
 ## Confusion Matrix
-
-<img width="709" height="608" alt="image" src="https://github.com/user-attachments/assets/065bd6c0-508e-457e-9a10-4b15209ee51f" />
-
+<a href="https://ibb.co/C3DNBW6X"><img src="https://i.ibb.co/tTFkB3zN/D.png" alt="D" border="0"></a>
 
 ## Classification Report
-<img width="812" height="562" alt="image" src="https://github.com/user-attachments/assets/72852fc6-9538-44a5-851b-7fdbfb29faf9" />
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/r1Tv4dT/D3.png" alt="D3" border="0"></a>
 
-
-### New Sample Data Prediction
-<img width="719" height="762" alt="image" src="https://github.com/user-attachments/assets/5fc833de-3c35-4699-a28e-4f8975766c1e" />
-
+## New Sample Data Prediction
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/gbRRNQ2T/D1.png" alt="D1" border="0"></a>
 
 ## RESULT
-
 The Convolutional Neural Network (CNN) model was successfully trained and achieved good classification performance on the given image dataset.
