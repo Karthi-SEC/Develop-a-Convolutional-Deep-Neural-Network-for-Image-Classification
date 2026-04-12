@@ -70,8 +70,8 @@ if torch.cuda.is_available():
     model.to(device)
 
 # Print model summary
-print('Name: Vikaskumar M')
-print('Register Number: 212224220122')
+print('Name: D KARTHIKEYAN')
+print('Register Number: 212224230115')
 summary(model, input_size=(1, 28, 28))
 
 # Initialize the Model, Loss Function, and Optimizer
@@ -81,8 +81,8 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Train the Model
 def train_model(model, train_loader, num_epochs=3):
-  print('Name: Vikaskumar M')
-  print('Register Number: 212224220122')
+  print('Name: D KARTHIKEYAN')
+  print('Register Number: 212224230115')
   for epoch in range(num_epochs):
       model.train()
       running_loss = 0.0
@@ -94,8 +94,8 @@ def train_model(model, train_loader, num_epochs=3):
         optimizer.step()
         running_loss += loss.item()
 
-      print('Name: Vikaskumar M')
-      print('Register Number: 212224220122')
+      print('Name: D KARTHIKEYAN')
+      print('Register Number: 212224230115')
       print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader):.4f}')
 
 
